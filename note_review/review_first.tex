@@ -1,11 +1,9 @@
 \RequirePackage{lineno} 
 \documentclass[,superscriptaddress,showpacs,amssymb,amsmath,amsfonts,linenumbers,article]{revtex4-1}
-%\documentclass[prc,preprint,superscriptaddress,showpacs,amssymb,amsmath,amsfonts,aps]{revtex4}
-%\setlength{\topmargin}{-1.0cm}
+
 \usepackage{graphicx}
 \usepackage{dcolumn}
 \newcolumntype{d}[1]{D{.}{.}{-1}} 
-%\usepackage{epsfig}
 \usepackage{latexsym}
 \usepackage{amsmath} 
 \usepackage{url}
@@ -17,20 +15,11 @@
 \usepackage{multirow}
 \usepackage{hyperref}
 \usepackage{float}
-%\restylefloat{table}
 \usepackage[margin=20mm]{geometry}
-%\usepackage{enumerate}
 \usepackage{enumitem}
-
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
-
-
-%\usepackage[dvips]{color}
-
-%\newcommand{\Dfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
-%\newcommand{\F}[1]{Figure~\ref{#1}}
 \pagenumbering{arabic}
 \pdfminorversion=5 
 \pdfcompresslevel=9
@@ -70,8 +59,6 @@ Meanwhile, the physical interpretation of the results is underway and will be pu
 \item {\bf At line 108 you say that analysis review report presents integrated and single –differential cross sections. Are there any plans to extract and publish any other observables (e.g. doubly differential cross sections) from this data?}\\ \\
 At the moment we do not have such plans. Presently we plan to concentrate on finalizing the physical interpretation of the extracted cross sections  and on the preparation of the journal publication, which will include both the details on the experimental cross section extraction and the physical interpretation of the obtained results. When this is complete, the extraction of other observables may be considered.
 
-%(which includes the comparison with the corresponding free proton cross sections and investigation of FSI effects)
-
 
 \item {\bf Around line 118 you say that the quasi-free data were taken under the same conditions as free proton data and this allows a comparison of the two data sets. It would be useful at this point to give an indication of the statistical accuracy obtained for the quasi-free study in comparison with the accuracy of the free proton study. Was there any normalisation of the quasi-free cross sections to the free proton cross-sections?}\\ \\
 For the free proton integral cross sections for the majority of $(W,~Q^{2})$ points, the uncertainty $\delta_{\text{stat,~mod}}^{\text{tot}}$, which is the statistical uncertainty combined with the model dependence uncertainty, stays on a level of $\sim$~1\%-3\%. For the quasi-free integral cross sections for the majority of points this uncertainty is on a level of $\sim$~4\%-6\%. This information was added in the next to last paragraph of Introduction. No normalization of the quasi-free cross sections to the free proton cross-sections was performed. The detailed investigation of the difference between these two cross section sets will be a part of the physical interpretation of the result.
@@ -91,11 +78,6 @@ One more issue that may influence the efficiency accuracy is the cross section s
 
 Taking into account all these arguments, we consider the efficiency estimated by TWOPEG-D to be trustworthy and would not expect any other EG to give a better result.
 
-%none of the currently existing MC generators is expected to give better results for the efficiency.
-
-% no other event generator that can simulate the Fermi smearing for the double-pion production currently exists. This EG, being especially developed for experiments off the moving proton, generates the Fermi motion of the initial proton and then naturally merges it into the specific kinematics of double-pion electroproduction. We consider the efficiency estimated by TWOPEG-D to be trustworthy relying on the following arguments.\\
-
-% TWOPEG-D~\cite{twopeg_d} is an extension of the TWOPEG event generator~\cite{twopeg}, which simulates the double-pion production off the free proton and almost perfectly reproduces the published free proton cross sections in the investigated kinematic region as confirmed by Refs.~\cite{twopeg,fedotov_prc}. TWOPEG-D in turns assumes the quasi-free events in the initial proton rest frame to be distributed according to the free proton cross sections implemented in TWOPEG, which is considered to be a good approximation for the purpose of the efficiency evaluation.
 
 \item {\bf Around line 166, you state that the GSIM package does not properly reproduce the resolution of the drift chambers or the TOF system. You need to state clearly how bad the mismatch is and what its effect on the data analysis is. You immediately go on to say that the GSIM Post Processor is used to better match the resolution. You need to say how this works and whether or not it completely cures the problem. Is this a standard procedure? Has it been done in other analysis? Is there a suitable reference?}\\ \\
 This analysis employs standard and well-established CLAS software for the purpose of simulating the detector response, which includes GSIM (GEANT SIMulation), GPP (GSIM Post Processor), and recsis (reconstruction software). This multi-stage simulation/reconstruction procedure is used in all CLAS data analyses as confirmed by e.g. Refs.~\cite{Markov:2014, Arjun, Ye_Tian:2017}.
@@ -120,13 +102,9 @@ The region of the event excess below the main structure (including the mentioned
 
 The events at $P_{e} \sim 1.8$~GeV came from the elastic scattering. The relative contribution from the pion contamination is about the same for all $P_{e}$, but since at our beam energy the event sample is dominated by elastic events, a pronounced tail from pions appears in this region. This effect is seen in FIG.~1 (here) plotted without log scale.
 
-
-%one can see also pronounced tail from pions in this region. It is clearly seen at the right plot that after removing the first CC segment the relative contribution from the pions becomes smaller for all P_{e}s.
-
 Beside this, the pion contamination in Fig.~2.1 looks so pronounced as the figure is plotted before all other cuts. A large part of the tail comes from the first CC segment, which turns out to be totally dominated by the pion contamination. This segment is later removed from the analysis by the fiducial cut in the CC plane given by Eq.~(2.1.10). This effect is illustrated by FIG.~1 (here), where the tail decreases significantly after the manual removal of the 1st CC segment. The pion contamination at other values of $P_{e}$ decreases as well.
 
 
-%\afterpage{\clearpage}
 \begin{figure}[htp]
 \begin{center}
 \framebox{\includegraphics[width=10cm]{pictures/ectot2.pdf}}
@@ -137,14 +115,12 @@ Beside this, the pion contamination in Fig.~2.1 looks so pronounced as the figur
 
 Note also that Fig.~2.1 is plotted for inclusive electrons, while Fig.~2.2 contains only double-pion events as only this exclusive channel was simulated. At the beam energy of 2.039~GeV the energy of the scattered electron for the double-pion production does not exceed $\sim$1.5~GeV as illustrated by Fig.2.2.
 
-%The dominant part of events in the region of $P_{e’}$$\sim$1.8 GeV is thought to correspond to the elastic part of the scattering spectrum.
-
 No upper cut on $P_{e’}$ is applied. It looks like the experimental distributions end at the beam energy value. 
 
 
 \item {\bf In figure 2.4 it might be clearer to show the difference between $\theta_{CC}$ and the average (or expected) value for each segment. $\Delta \theta_{cc}$ would then be centred around zero. This would give a better presentation and show clearly whether the applied cuts were consistent across all the segments, which is difficult to judge from the given plots. As shown this figure is slightly on the small side.}\\ \\
 FIG.~2 (here) shows the distribution of the quantity $\theta_{CC} - \theta_{CC}^{mean}$ versus segment for Sector 1, where $\theta_{CC}^{mean}$ is the mean value of the Gaussian function used for fitting the distribution of $\theta_{CC}$ for each segment. Black horizontal lines correspond to the $\pm$ 4$\sigma$ cut applied to eliminate background noise and accidentals. It looks like the $\theta$ distributions are getting wider for larger segment numbers and the applied cut follows this widening. As this cut is an auxiliary one, it was made rather loose in order to avoid unnecessary loss of good electrons.
-%\afterpage{\clearpage}
+
 \begin{figure}[htp]
 \begin{center}
 \framebox{\includegraphics[width=7cm]{pictures/thvsseg.pdf}}
@@ -183,8 +159,6 @@ The problem is present in all sectors. The corresponding paddles therefore were 
 
 This issue with paddles \#48 is also observed in other studies related to ``e1e" run period (see e.g. Refs.~\cite{fedotov_prc,Ye_Tian:2017}).
 
-%As events assigned to the paddle \#48 in each Sector are not trustworthy, they were not included into the analysis. 
-
 
 \item {\bf In figure 2.8 the 3rd and 4th columns should be interchanged, so the corrected data is presented in the same order as the uncorrected data. Are the problems with problematic paddles checked once in the analysis or on a run-buy-run basis?}\\ \\
 The plots in Figs.~2.8 and 2.9 are arranged in a different way, and now they seem to look better. 
@@ -201,7 +175,6 @@ Some double-band paddles indeed had some additional low-intensity structures. Th
 \item {\bf In figure 2.10 there is evidence of additional bands of particles. Do you know what these are?} \\ \\
 FIGURE.~4 (here) shows the $\beta$ versus momentum distributions for positive hadron candidates with the superimposed black curves for the nominal $\beta$ calculated under exact hadron mass assumptions (see Eq.~(2.1.16) in the analysis note). The mass of the following hadrons was assumed: in the upper plot -- muon, pion, and kaon, while in the lower plot -- kaon, proton, and deuteron. As seen from the plots, the black curves match perfectly the corresponding experimental bands, so these bands can be attributed to the considered hadron types.
 
-%\afterpage{\clearpage}
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=10.5cm]{pictures/hadr_id.pdf}
@@ -233,7 +206,6 @@ See FIGS.4~and~5 (here) and the answers to the two previous questions.
 \item {\bf In cuts 2.3.3 and shown in figure 2.18, the proton $\theta^{max}$ cut is much tighter than the corresponding pion cut. Based on the intensity distributions a cut of around 80 degrees (rather than 60 degrees) would seem to be comparable to effect of the pion cut. Can you say why the proton cut is so tight?} \\ \\
 The proton $\theta^{max}$ cut was set at 60 degrees on purpose. It turned out that the portion of protons, which have undergone FSI, rises dramatically with increasing $\theta$. Specifically, for $\theta > $ 60 degrees, quasi-free protons vanish and only FSI-disturbed protons are left. 
 For pions, this correlation, although being observed as well, is not as strong as for protons. This was found out when comparing experimental missing momentum distributions with simulated ones (as in Fig.~2.29 in the analysis note) in different slices of final hadron angles. 
-%Meanwhile, for pions such a strong correlation was not observed
 
 This observation is in agreement with the fact that large-angle protons have low momenta and hence are more likely to interact in the final state (as the interactions probability is thought to be higher for slower hadrons). 
 
@@ -242,7 +214,7 @@ The analogous distributions from the free proton analysis are less populated wit
 Taking into account these arguments, we concluded that setting $\theta^{max}$ to 60 degrees would not cause any loss of good quasi-free protons but may help to minimize FSI contamination, hence clearing up the missing mass distributions and facilitating the exclusivity cut.
 
 \item {\bf In figure 2.20, sector 5 data, there appear to be some additional inefficient bands which have not been cut out. Is there a reason for this?}\\ \\
-These small inefficiencies are thought to originate from dead DC wires. They were not cut out because they were considered as minor. The $\theta$ versus momentum cuts are established as a compromise between the intention to cut out as many inefficiencies as possible and the desire to keep enough statistics and (which is more important) to maintain adequate coverage of the reaction phase-space. Removing too many zones from the reaction phase-space causes an unnecessary rise in the empty cell amount, hence increasing the model dependence of the cross sections.% Therefore, if major inefficiencies are cut out then further zones removal causes more worsening than improvements.
+These small inefficiencies are thought to originate from dead DC wires. They were not cut out because they were considered as minor. The $\theta$ versus momentum cuts are established as a compromise between the intention to cut out as many inefficiencies as possible and the desire to keep enough statistics and (which is more important) to maintain adequate coverage of the reaction phase-space. Removing too many zones from the reaction phase-space causes an unnecessary rise in the empty cell amount, hence increasing the model dependence of the cross sections.
 
 \item {\bf In figure 2.21 can you say how much of the data has been cut out by the cuts applied?}\\ \\
 The total Faraday Cup charge without the quality check cuts is 4167.79 $\mu C$, and after the cuts, it is 3675.52 $\mu C$. Therefore, around 12\% of statistics has been cut out by these cuts.
@@ -299,7 +271,6 @@ The systematic uncertainty to the cross section due to this source was estimated
 Note that the correction is not performed (i) for $W<$~1.4875~GeV as it is not needed there and (ii) for events from the fully exclusive topology (which acquires up to $\sim$25\% of the analyzed statistics) as the procedure of the channel selection is different there. 
 
 \item {\bf Line 934: more explanation is required of the cut 2.4.3.}\\ \\
-%The simulated missing mass distributions do not match the corresponding experimental distributions well enough for events from the $\pi^{-}$-missing topology and $W>$~1.4875~GeV. The difference is attributed to FSI background, which can hardly be simulated. This complicates the
 The cut, which is shown in Fig.~2.33 by the green vertical line, is equivalent to a regular exclusivity cut, which is always performed in order to select the channel. In this study, this cut is accompanied by the corresponding correction as FSI background is not reproduced by the simulation.
 
 
