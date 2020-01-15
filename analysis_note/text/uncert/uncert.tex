@@ -1,0 +1,237 @@
+\chapter{Cross section uncertainties}
+\label{Sect:uncert}
+\counterwithin{equation}{section}
+
+In this study (like in other studies of the double-pion cross sections~\cite{Rip_an_note:2002,Ripani:2002ss,Fed_an_note:2007,Fedotov:2008aa,Isupov:2017lnd,Arjun,Fed_an_note:2017,Fed_paper_2018}) three separate types of the cross section uncertainties are considered, i.e. statistical uncertainty, uncertainty due to the model dependence, and systematic uncertainty. The recipe for estimating the uncertainty of each type is given below. 
+
+
+\section{Statistical uncertainties}
+\label{Sect:stat_uncert}
+
+
+The limited statistics of both the experimental data and the Monte Carlo simulation are the two sources of statistical fluctuations of the extracted 
+cross sections. The cut on the efficiency uncertainty described in Sec.~\ref{Sect:eff_eval} was chosen in a way that the latter source gives a minor contribution to the total statistical uncertainty.
+
+The statistical uncertainty to the five-fold differential virtual photoproduction cross section is calculated individually in each non-empty multi-dimensional $\Delta^{5}\tau$ bin as described below.
+
+The absolute statistical  uncertainty due to the limited statistics of the experimental data is calculated in the non-empty bins as\footnote[1]{See Eq.~\eqref{eq:err_subtr} in App.~\ref{app_uncert}.}
+\begin{equation}
+\delta_{\text{stat}}^{\text{exp}}(\Delta^{5} \tau) = \frac{1}{\mathcal{E} \! \cdot \! R \! \cdot \! \mathcal{F} \! \cdot \! \Gamma_{v} }  \cdot  \frac{\sqrt{\left( \frac{N_{\text{full}}}{Q_{\text{full}}^{2}}+\frac{N_{\text{empty}}}{Q_{\text{empty}}^{2}} \right) } }{
+\Delta W \! \cdot \!  \Delta Q^{2} \! \cdot \!  \Delta^{5} \tau \! \cdot \! \mathcal{L}},
+\label{staterrors}
+\end{equation}
+where $\Gamma_{v}$ is the virtual photon flux given by Eq.~\eqref{flux}, while the other ingredients are explained after Eq.~\eqref{expcrossect}.
+
+
+The absolute uncertainty due to the limited Monte Carlo statistics is estimated in the non-empty bins as\footnote[2]{See Eq.~\eqref{eq:err_frac} in App.~\ref{app_uncert}.}
+\begin{equation}
+\delta_{\text{stat}}^{\text{MC}}(\Delta^{5} \tau) = \frac{\textrm{d}^{5}\sigma_{v}}{\textrm{d}^{5}\tau} \left( \frac{\delta \mathcal{E}}{\mathcal{E}} \right),
+\label{montecarloerror}
+\end{equation}
+where $\frac{\textrm{d}^{5}\sigma_{v}}{\textrm{d}^{5}\tau}$ is the virtual photoproduction cross section given by Eq.~\eqref{fulldiff}, $\mathcal{E}$ is the efficiency inside the multi-dimensional bin defined by Eq.~\eqref{eq:eff}, while $\delta \mathcal{E}$ is its absolute statistical uncertainty. 
+
+%The calculation of the efficiency uncertainty $\delta \mathcal{E}$ is an issue of special attention. Due to the fact that $N_{gen}$ and $N_{rec}$ in Eq.~\eqref{eq:eff} are not independent, the usual method of partial derivatives is not applicable in order to calculate $\delta \mathcal{E}$.
+
+Meanwhile, the calculation of the efficiency uncertainty $\delta \mathcal{E}$ is not straightforward and needs special attention, since (i) $N_{gen}$ and $N_{rec}$ in Eq.~\eqref{eq:eff} are not independent and (ii) Monte Carlo events in this equation are subject to weighting. Therefore, the special approach described in Ref.~\cite{Laforge:1996ts} was used for this purpose. Neglecting the event migration between the bins, this approach gives the following expression for the absolute statistical uncertainty of the efficiency in a bin for the case of weighted Monte Carlo simulation,
+
+ 
+
+
+\begin{equation}
+\begin{aligned}
+\delta \mathcal{E}(\Delta^{5} \tau) = \sqrt{\frac{\mathbb{N}_{gen} - 2\mathbb{N}_{rec}}{\mathbb{N}_{gen}^{3}}\sum\limits_{i=1}^{N_{rec}} w_{i}^{2} + \frac{\mathbb{N}_{rec}^{2}}{\mathbb{N}_{gen}^{4}}\sum\limits_{j=1}^{N_{gen}} w_{j}^{2}},
+\end{aligned}
+\label{eq:eff_err_weighted}
+\end{equation}
+where $N_{gen}$ and $N_{rec}$ are the numbers of the generated and reconstructed Monte Carlo events inside the multi-dimensional bin, respectively, $\mathbb{N}_{gen}$ and  $\mathbb{N}_{rec}$ are the corresponding weighted event numbers, while $w$ is a weight of an individual event.
+
+
+The two parts of the statistical uncertainty given by Eqs.~\eqref{staterrors} and \eqref{montecarloerror} are combined quadratically into the total absolute statistical uncertainty in each non-empty $\Delta^{5} \tau$ bin\footnote[3]{The THnSparse root histograms offer an easy way of dealing with the uncertainties. Each multi-dimensional bin of the histograms with the experimental data acquires the absolute uncertainty $\sqrt{N_{full}}$ and $\sqrt{N_{empty}}$ for full and empty target runs, respectively. The efficiency histograms get the uncertainty $\delta \mathcal{E}(\Delta^{5} \tau)$ given by Eq.~\eqref{eq:eff_err_weighted}. Then the uncertainty automatically propagates upon all manipulations with these histograms (addition, division, scaling).},
+\begin{equation}
+\delta_{\text{stat}}^{\text{tot}}(\Delta^{5} \tau) =
+\sqrt{\left (\delta_{\text{stat}}^{\text{exp}} \right )^{2} + \left (\delta_{\text{stat}}^{\text{MC}}\right )^{2}}.
+\label{errortot}
+\end{equation}
+
+
+The cross section assigned to the empty $\Delta^{5} \tau$ cells (see Eq.~\eqref{cr_sect_empt}) acquires zero statistical uncertainty.
+
+% (see Eqs.~\eqref{inegr5diff} and~\eqref{eq:reported_sec})
+For the extracted  single-differential cross sections the statistical uncertainty $\delta_{\text{stat}}^{\text{tot}}(\Delta X)$ (where $X$ is one of the final state variables, i.e. $M_{h_{1}h_{2}}$, $M_{h_{2}h_{3}}$, $\theta_{h_1}$, $\alpha_{h_1}$) is obtained from the uncertainties  $\delta_{\text{stat}}^{\text{tot}}(\Delta^{5} \tau)$ of the five-fold differential cross sections according to the standard error propagation rules.
+
+
+%============================
+
+
+\section{Model dependent uncertainties}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\label{Sect:mod_dep}
+In the studies of the double-pion cross sections off the free proton~\cite{Rip_an_note:2002,Ripani:2002ss,Fed_an_note:2007,Fedotov:2008aa,Isupov:2017lnd,Arjun,Fed_an_note:2017,Fed_paper_2018}, the uncertainty of the model dependence is commonly treated as a unique uncertainty type and is associated with the filling of the empty cells. In this analysis one more source of the cross section model dependence had to be considered, which is unfolding the effects of the target motion. These two sources give comparable uncertainties only for the two lowest $W$ bins, while for the other bins the dominant part of the model dependent uncertainty comes from the filling of the empty cells.
+
+Both the contribution from the empty cells and the value of the unfolding correction vary greatly (from completely insignificant to considerable) for different final state variable bins. Therefore, it is convenient to estimate the model dependent uncertainties in each $\Delta X$ bin of the single-differential cross sections (where $X$ is one of the final state variables introduced in Sect.~\ref{Sect:kin_var}).
+
+% For the first two $W$ bins the uncertainty from these sources are comparable, while for the other bins the model dependent uncertainty is completely dominated by the former conventional source.
+
+%isolated from the other uncertainty sources and 
+\subsection{Uncertainty due to the empty cells filling}
+
+
+During the empty cell filling the extracted cross sections acquire a moderate model dependence (see Sect.~\ref{Sect:empt_cells}). Once the empty cells are filled, the part of the single-differential cross section that came from the empty cells is assigned a 50\% relative uncertainty\footnote[4]{This way to estimate this uncertainty, although being rather conservative, has become conventional for the studies of double-pion production cross sections~\cite{Isupov:2017lnd,Fed_an_note:2017,Golovach}. } (see Sect.~\ref{Sect:empt_cells}). The absolute cross section uncertainty $\widetilde{\delta}^{\text{cells}}_{\text{model}}(\Delta X)$ is hence given by
+\begin{equation}
+\widetilde{\delta}^{\text{cells}}_{\text{model}} (\Delta X) = \frac{1}{2}\left ( \left [ \frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{filled} - \left [\frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{not~filled} \right ),
+\label{eq:error_mod_abs_tmp}
+\end{equation}
+where the parentheses contain the difference between the cross section values calculated with the empty cell contributions (``filled") and without them (``not filled").
+
+
+The corresponding relative uncertainty $\varepsilon^{\text{cells}}_{\text{model}} (\Delta X)$ is in turn given by 
+\begin{equation}
+\varepsilon^{\text{cells}}_{\text{model}} (\Delta X) = \dfrac{\widetilde{\delta}^{\text{cells}}_{\text{model}}}{\left [ \frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{filled}}.
+\label{eq:rel_mod_err}
+\end{equation}
+
+After the filling of the empty cells the cross section is subject to several subsequent manipulations, i.e. virtual photon flux normalization, radiative correction, and unfolding the effects of initial proton motion. Along this path the absolute uncertainty $\widetilde{\delta}^{\text{cells}}_{\text{model}} (\Delta X)$ is propagated in such a way as to keep the relative uncertainty $\varepsilon^{\text{cells}}_{\text{model}}(\Delta X)$ in each $\Delta X$ bin of the single-differential distribution unchanged.
+
+Therefore, the absolute uncertainty $\delta^{\text{cells}}_{\text{model}} (\Delta X)$ for the final single-differential distributions is obtained by
+\begin{equation}
+\delta^{\text{cells}}_{\text{model}} (\Delta X) = \left [ \frac{\textrm{d}\sigma_{\text{v}}}{\textrm{d}X} \right ]_{final}\!\! \cdot \varepsilon^{\text{cells}}_{\text{model}},
+\label{eq:error_mod_abs}
+\end{equation}
+with the relative uncertainty $\varepsilon^{\text{cells}}_{\text{model}}$ given by Eq.~\eqref{eq:rel_mod_err} and the single-differential cross section determined according to~Eq.~\eqref{inegr5diff}.
+
+
+
+\subsection{Uncertainty due to unfolding the effects of target motion}
+\label{Sect:mod_dep2}
+
+In this study the cross sections are subjected to one extra correction compared to the cross sections extracted off the free proton~\cite{Rip_an_note:2002,Ripani:2002ss,Fed_an_note:2007,Fedotov:2008aa,Isupov:2017lnd,Arjun,Fed_an_note:2017,Fed_paper_2018}, i.e. unfolding the effects of initial proton motion. The potential inaccuracies due to this procedure are also attributed to the model dependent uncertainty, since the procedure is based on (i) the free proton cross sections taken from the model JM and (ii) the model of the deuteron wave function, which was the Bonn model (see Sect.~\ref{Sect:fermi_corr} for more detail). 
+
+For each $\Delta X$ bin of the single-differential distributions the relative uncertainty due to the unfolding procedure was estimated by\footnote[5]{Although the relative uncertainty due to empty cell filling can also be estimated in this way, it was decided to calculate it according to Eq.~\eqref{eq:rel_mod_err} to observe consistency with the free proton results~\cite{Fed_an_note:2017}.}
+
+\begin{equation}
+\varepsilon^{\text{unfold}}_{\text{model}} (\Delta X) = \dfrac{\left [ \frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{folded} - \left [ \frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{unfolded}}{\left [ \frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{folded} + \left [ \frac{\textrm{d}\sigma}{\textrm{d}X} \right ]_{unfolded}}.
+\label{eq:rel_mod_err_fermi}
+\end{equation}
+
+The corresponding absolute uncertainty is then given by
+\begin{equation}
+\delta^{\text{unfold}}_{\text{model}} (\Delta X) = \left [ \frac{\textrm{d}\sigma_{\text{v}}}{\textrm{d}X} \right ]_{final}\!\! \cdot \varepsilon^{\text{unfold}}_{\text{model}}.
+\label{eq:error_stat_mod_fermi}
+\end{equation}
+
+%the absolute uncertainty $\delta^{\text{unfold}}_{\text{model}}(\Delta X)$ associated with this correction is estimated as a half of the difference between the corrected and non-corrected cross section values (similarly to the uncertainty due to the empty cells filling). This method of accounting for this uncertainty advantages the direct comparison between the cross sections of this study and the corresponding cross sections off the free proton. 
+
+
+ 
+
+
+
+%\newpage 
+
+
+\section{Systematic uncertainties}
+\label{Sect:sys_uncert}
+
+The systematic uncertainty of the extracted cross sections is estimated in each bin in $W$ and $Q^{2}$. As in the previous studies of the double-pion production cross sections~\cite{Rip_an_note:2002,Ripani:2002ss,Fed_an_note:2007,Fedotov:2008aa,Isupov:2017lnd,Arjun,Fed_an_note:2017,Fed_paper_2018}, the dependence of the systematic uncertainty on the hadronic variables is not investigated. 
+
+
+The following sources are considered to contribute to the total systematic uncertainty of the extracted cross sections.
+
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\subsection*{Normalization and electron identification}
+
+The presence of quasi-elastic events in the dataset advantages the verification of both the overall cross section normalization and the quality of the electron selection. The former may lack accuracy due to potential miscalibrations of the Faraday cup, fluctuations in the target density, deviations of the beam current and position, inaccuracies in determining the DAQ live-time as well as imprecise knowledge of other ``luminosity ingredients" such as target length or the density of liquid deuterium (see Eq.~\eqref{expcrossect}). Meanwhile, the quality of the electron selection may suffer from potential miscalibrations of different detector parts, inaccuracies in the electron tracking and identification as well as uncertainties of the cuts and corrections involved in the electron selection.
+
+To verify the correct cross section normalization and the quality of the electron selection, the study~\cite{Fed_an_note:2017,Fed_paper_2018} (which is the study of double-pion cross sections off the free proton in the same kinematic region) estimates the elastic cross section and then compares it with the Bosted parameterization~\cite{Bosted:1994tm}. This comparison revealed a 3\% agreement between the experimental and parameterized cross sections that allowed to assign a 3\% global uncertainty to the extracted double-pion cross sections due to inaccuracies in the normalization and electron selection.
+
+To achieve the same goals in the current analysis, the quasi-elastic cross section was estimated and then compared with the Bosted  parameterization of the quasi-elastic cross section off the deuteron~\cite{Bosted_fit,Bosted:2007xd} (see Sect.~\ref{Sect:norm} for details). This comparison allows to claim a 5\% agreement between the experimental and parameterized cross sections and, therefore, to assign a 5\% global uncertainty to the extracted double-pion cross sections due to inaccuracies in the normalization and electron selection.
+
+
+%Meanwhile, the quasi-elastic scattering off the deuteron is less understood and somehow lacks the quality of theoretical description compared to the elastic scattering off the free proton. In Sect.~\ref{Sect:norm} the ability of the Bosted parameterization to describe available experimental data is tested, and then the comparison between the cross section estimated from the current dataset and the parameterization is given.
+
+
+\subsection*{Integration over three sets of final hadron variables}
+
+According to Sect.~\ref{Sect:kin_var}, the cross sections are extracted in three sets of the kinematic variables. The integral cross sections are found to slightly differ among the sets due to the different data and efficiency propagation to various kinematic grids. As a final result, the integral cross sections averaged (as an arithmetic mean) over these three grids are reported. The standard error of the mean is interpreted as a systematic uncertainty (which is calculated according to Eq.~\eqref{eq:err_arith_mean} in App.~\ref{app_uncert}). The single-differential cross sections and the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$ are scaled to the mean integral value. 
+
+Since different variable sets correspond to different registered final hadrons (and, therefore, to different combinations of the hadron cuts), this systematic error includes the error due to the shapes of the hadron cuts that are used in the analysis. The average value of this uncertainty among all $W$ and $Q^{2}$ bins is 1.6\%. However, the error is larger in the first two $W$ bins (with the maximum of 9.5\% achieved in the first $W$ bin at $Q^{2} = 0.675$~GeV$^{2}$), which being located near the reaction threshold, correspond to low momenta of the final hadrons.  
+
+\subsection*{Relative efficiency uncertainty cut}
+
+The cut on the relative efficiency uncertainty directly impacts both the cross section value and the cross section uncertainties, since it excludes entire kinematic cells from further consideration (see Sect.~\ref{Sect:eff_eval}). This cut, therefore, reduces the total statistical uncertainty and increases the model dependent uncertainty, and a cut value $\delta \widetilde{\mathcal{E}}/\widetilde{\mathcal{E}} = 0.3$ is chosen as a compromise between these two effects. To estimate the systematic effect of the cut, the integral cross sections were also calculated for the cut values 0.25 and 0.35. As a final result, the arithmetic mean of the integral cross sections for these three cut values is reported, and the standard error of the mean is interpreted as a systematic uncertainty (which is calculated according to Eq.~\eqref{eq:err_arith_mean} in App.~\ref{app_uncert}). The single-differential cross sections and the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$ are reported for the cut value 0.3, being scaled to the mean integral value.
+
+The systematic effect of the relative efficiency uncertainty cut is estimated for each bin in $W$ and $Q^{2}$ individually and is found to be minor, i.e. the average uncertainty value is 0.8\%. Taking into account that the cut on the relative efficiency uncertainty impacts directly the amount of empty cells, the revealed small uncertainty associated with this cut indicates that the procedure of the empty cell filling is well under control and that the cross section inaccuracy caused by the corresponding model dependence is not significant. 
+
+
+\subsection*{Correction due to FSI-background admixture}
+
+One more part of the systematic uncertainties comes from the effective correction due to FSI-background admixture. This correction is performed for the experimental events in the $\pi^{-}$ missing topology and described in Sect.~\ref{Sect:excl_cut_pim_miss}. The fit shown in Fig.~\ref{fig:main_top_mm_fsi_corr} (as well as the corresponding correction factor given by Eq.~\eqref{eq:fsi_corr}) turned out to be slightly dependent on the histogram binning. To account for this uncertainty, the correction factor is estimated for five different histogram bin sizes, and the arithmetic mean of these five individual values is used for the correction (for each bin in $W$). The absolute uncertainty of the resulting correction factor is estimated as a standard error of the mean (which is calculated according to Eq.~\eqref{eq:err_arith_mean} in App.~\ref{app_uncert}). The corresponding cross section uncertainty is estimated by Eq.~\eqref{eq:err_prod}, where the quantity $a$ includes the number of events from the $\pi^{-}$ missing topology, while $c$ in the denominator includes the efficiency estimated for both topologies. 
+
+The systematic effect of the FSI-background correction is estimated for each bin in $W$ and $Q^{2}$. The average value of the relative systematic uncertainty is 0.4\%, which is rather marginal.
+
+
+\subsection*{Radiative corrections}
+
+
+As a common practice in studies of the double-pion cross sections with CLAS~\cite{Rip_an_note:2002,Ripani:2002ss,Fed_an_note:2007,Fedotov:2008aa,Isupov:2017lnd,Arjun,Fed_an_note:2017,Fed_paper_2018}, a 5\% global uncertainty is assigned to the cross section due to the inclusive radiative correction procedure (see Sect.~\ref{Sect:rad_corr}).
+
+
+\subsection*{Summary of the systematic uncertainties}
+
+The average values of integral systematic errors with their sources are presented in Tab.~\ref{tab:sys_err}. The uncertainties due to these sources were summed up in quadrature in each $W$ and $Q^{2}$ bin to obtain the total systematic uncertainty for the integral cross sections. The common value of the total systematic uncertainty in the bin is $\sim$7\% (it is, however, higher near the threshold).
+
+\begin{table}[htp]
+\begin{center}
+\caption{\small Average values of integral systematic uncertainties. \label{tab:sys_err}}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|}
+
+\hline
+\multicolumn{1}{|c|}{Source} & Average value \\ \hline
+Normalization and electron identification & 5\% \\ \hline
+Integration over three sets of hadron variables & 1.7\%\\ \hline 
+Relative efficiency uncertainty cut & 0.6\%\\ \hline 
+Correction due to FSI-background admixture & 0.4\%\\ \hline 
+Radiative corrections & 5\% \\ \hline 
+\bf{Total} & \bf{7.4}\% \\ \hline 
+\end{tabular}
+%}
+\end{center}
+\end{table} 
+
+
+
+\section{Summary for the cross section uncertainties}
+\label{Sect:uncert_resume}
+
+
+Finally, the model dependent uncertainties $\delta^{\text{cells}}_{\text{model}}(\Delta X)$ and $\delta^{\text{unfold}}_{\text{model}}(\Delta X)$ defined by Eq.~\eqref{eq:error_mod_abs} and Eq.~\eqref{eq:error_stat_mod_fermi}, respectively, are combined with the total statistical uncertainty $\delta_{\text{stat}}^{\text{tot}}(\Delta X)$ defined in Sect.~\ref{Sect:stat_uncert} as the following.
+\begin{equation}
+\delta_{\text{stat,mod}}^{\text{tot}} (\Delta X) =
+\sqrt{\left (\delta_{\text{stat}}^{\text{tot}} \right )^{2} + \left (\delta^{\text{cells}}_{\text{model}}\right )^{2} + \left (\delta^{\text{unfold}}_{\text{model}}\right )^{2}}.
+\label{eq:error_stat_mod}
+\end{equation}
+
+
+The extracted cross sections are reported with the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$, which for the single-differential distributions is given by Eq.~\eqref{eq:error_stat_mod}, while for the integral cross sections is obtained from the uncertainty of the single-differential distributions according to the standard error propagation rules\footnote[6]{Note that for the integral cross sections the value of $\delta_{\text{stat,mod}}^{\text{tot}}$ was averaged (as arithmetic mean) among the three sets of final hadron variables.}. For the majority of $(W,~Q^{2})$ points of the integral cross sections the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$ stays on a level of $\sim$ 4\%-6\%.
+
+
+%single-differential cross sections are reported with the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}(\Delta X)$ given by Eq.~\eqref{eq:error_stat_mod}. The integral cross sections are reported with the corresponding uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$, which is obtained  
+
+%For the integral cross sections the corresponding uncertainty  is obtained from that of the single-differential cross sections according to the standard error propagation rules.
+
+It should be mentioned that to combine the statistical uncertainty with the uncertainty of the model dependence and to report the final cross sections with the resulting uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$ have become conventional for the studies of double-pion production cross sections~\cite{Rip_an_note:2002,Ripani:2002ss,Fed_an_note:2007,Fedotov:2008aa,Isupov:2017lnd,Arjun,Fed_an_note:2017,Fed_paper_2018}.
+
+
+
+
+%As written in Sect.~\ref{Sect:corr_cr_sect} after the empty cells filling the cross sections are subject to the radiative correction and the unfolding the effects of the target motion. The former is applied as a global factor in each $\Delta W \Delta Q^2$ bin and the uncertainty $\delta_{\text{model}} (\Delta X)$ is propagated accordingly. The latter correction is applied as a five-dimensional factor in each $\Delta W \Delta Q^2$ bin
+
+
+In addition to the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$, for the integral cross sections the total systematic uncertainty is also reported as a separate quantity. If necessary, the relative systematic uncertainty in each $W$ and $Q^{2}$ bin can be propagated as a global factor to the corresponding single-differential distributions.
+
+%, while the single-differential cross sections are reported only with the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$ (see Sect.~\ref{Sect:mod_dep}).
+
+In this study the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$ is less than the total systematic uncertainty for the majority of $(W,~Q^{2})$ points, exceeding it only near the threshold (for $W \lesssim 1.4$~GeV). This happens because the former rises close to the threshold due to small experimental statistics, large contribution of the empty cells (see Sect.~\ref{Sect:empt_cells}), and pronounced impact of the unfolding correction (see Sect.~\ref{Sect:fermi_corr}). % Meanwhile, for the majority of $W$ bins (i.e. for $W \gtrsim 1.4$~GeV ) the systematic uncertainty slightly dominates the uncertainty $\delta_{\text{stat,mod}}^{\text{tot}}$.

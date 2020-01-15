@@ -1,0 +1,93 @@
+
+\documentclass[12pt]{report}
+\include{text/setups/setups}
+\usepackage{caption}
+\usepackage[english]{babel}
+\usepackage{lineno, blindtext}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{footnote}
+\usepackage{afterpage}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+\usepackage{footnotebackref}
+\usepackage{amsmath}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{boldline}
+\usepackage[toc,page]{appendix}
+%\usepackage[title]{appendix}
+\usepackage{placeins}
+\usepackage{chngcntr}
+
+\newcolumntype{?}{!{\vrule width 1.5pt}}
+
+
+
+\begin{document}
+
+
+%cases with square brackets
+ \makeatletter
+\newenvironment{sqcases}{%
+  \matrix@check\sqcases\env@sqcases
+}{%
+  \endarray\right.%
+}
+\def\env@sqcases{%
+  \let\@ifnextchar\new@ifnextchar
+  \left\lbrack
+  \def\arraystretch{1.2}%
+  \array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+
+
+\include{text/aliases/aliases}
+
+\include{text/title_page/title_page}
+
+%\pdfminorversion=5 
+\pdfcompresslevel=9
+\pdfobjcompresslevel=9
+\renewcommand{\theenumi}{\Alph{enumi}}
+\begin{linenumbers}
+\include{text/toc/toc}
+
+
+\include{text/motivation/motivation}
+\include{text/event_selection/event_selection}
+\include{text/other_cuts/other_cuts}
+\include{text/cross_section/cross_section}
+\include{text/corr_cr_sect/corr_cr_sect}
+\include{text/other_issues/other_issues}
+\include{text/normalization/normalization}
+\include{text/uncert/uncert}
+\include{text/concl/conclusion}
+\include{text/appendix/appendix}
+
+\end{linenumbers}
+
+\pagebreak
+\newpage
+
+
+
+\singlespacing
+
+\bibliographystyle{ieeetr}
+\bibliographystyle{apsrev4-1long}
+\bibliography{analysis_deut}
+
+
+
+
+
+\end{document}
