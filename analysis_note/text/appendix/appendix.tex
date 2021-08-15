@@ -140,7 +140,7 @@ As follows from Eqs.~\eqref{eq:res} and~\eqref{eq:res2}, $p_{X[0]}^{j}$ and $E_{
 
 Now let's estimate the absolute uncertainties of the corresponding missing masses.\vspace{-0.5em}
 
-%Assuming similar uncertainties of the momentum components and of the momentum magnitude among different particles, one can conclude from Eqs.~\eqref{eq:res} and~\eqref{eq:res2} that $p_{X[0]}^{j}$ and $E_{X[0]}$ acquire larger absolute uncertainties than $p_{X[\pi^{-}]}^{j}$ and $E_{X[\pi^{-}]}$, respectively. Considering this, let's then estimate the absolute uncertainties of the corresponding missing masses.\vspace{-0.5em}
+
 \begin{equation}
 \begin{aligned}
 &\Delta M_{X[0]}^{2} &=&~\sqrt{ \left (2E_{X[0]} \Delta E_{X[0]} \right )^{2} + \sum_{\substack{j = x,~y,~z}}\left (2p_{X[0]}^{j} \Delta p_{X[0]}^{j} \right )^{2}} \\
@@ -150,11 +150,6 @@ Now let's estimate the absolute uncertainties of the corresponding missing masse
 
 In Eqs.~\eqref{eq:res3} the quantities $\Delta E_{X[0]}$, $\Delta p_{X[0]}^{j}$ and $ \Delta E_{X[\pi^{-}]}$, $\Delta p_{X[\pi^{-}]}^{j}$ are respectively comparable, though (as was shown above) the former is systematically large than the latter. Meanwhile, both $E_{X[0]}$ and $p_{X[0]}^{j}$ are very close to zero, while both $E_{X[\pi^{-}]}$ and $p_{X[\pi^{-}]}$ are non-zero. As a consequence, the quantity $\Delta M_{X[0]}^{2}$ acquires smaller absolute uncertainty value than $\Delta M_{X[\pi^{-}]}^{2} $. This is, however, not the case for their relative uncertainties, since (in contrast with $M_{X[\pi^{-}]}^{2}$) the quantity $M_{X[0]}^{2}$ is extremely close to zero.
 
-%In Eqs.~\eqref{eq:res3} $\Delta E_{X[0]}$ and $\Delta p_{X[0]}^{j}$ are larger than $ \Delta E_{X[\pi^{-}]}$ and $\Delta p_{X[\pi^{-}]}^{j}$, respectively.
-% Although $\Delta E_{X[0]}$ and $\Delta p_{X[0]}^{j}$ are larger than $ \Delta E_{X[\pi^{-}]}$ and $\Delta p_{X[\pi^{-}]}^{j}$, respectively (as was shown above), they are nevertheless comparable.
-
-
-%To estimate this effect, the events were reconstructed via CLAS reconstruction software.
 
 \begin{figure}[htp]
 \begin{center}
@@ -166,7 +161,6 @@ In Eqs.~\eqref{eq:res3} the quantities $\Delta E_{X[0]}$, $\Delta p_{X[0]}^{j}$ 
 
 This impact of the detector resolution\footnote[4]{To produce this plot, generated events were reconstructed via CLAS reconstruction software.} on $M_{X[0]}^{2}$ and $M_{X[\pi^{-}]}^{2}$ is demonstrated in Fig.~\ref{fig:mm_res}, where $M_{X[0]}^{2}$ is shown to be visually very narrow with slight disturbances, while $M_{X[\pi^{-}]}^{2}$ acquires perceptible smearing. 
 
-%with slight both-side disturbances (small at the left and insignificant at the right)
 
 \vspace{-0.75em}
 \subsection*{Final state interactions}
@@ -239,7 +233,7 @@ Figure~\ref{fig:mm_pr_fsi} shows the distributions of $M_{X[0]}^{2}$ and $M_{X[\
 \label{app_lab_cms_trans}
 \addcontentsline{toc}{section}{B: Lab to CMS transformation for the case of proton at rest}
 
-Here the procedure of the Lab-to-CMS transformation for an electroproduction experiment off the proton at rest (bottom left illustration in Fig.~\ref{fig:lab_to_CMS}) is described~\cite{Fed_an_note:2017}. In this case the CMS axis orientation is different for each reaction event and is specified by the direction of the scattered electron. The transformation from Lab to CMS includes the following steps\footnote[1]{In all derivations the energy is assumed to be the last component of the four-momentum and the four-momentum to be a row vector.}:\vspace{-1em}
+Here the procedure of the Lab to CMS transformation for an electroproduction experiment off the proton at rest (bottom left illustration in Fig.~\ref{fig:lab_to_CMS}) is described~\cite{Fed_an_note:2017}. In this case the CMS axis orientation is different for each reaction event and is specified by the direction of the scattered electron. The transformation from Lab to CMS includes the following steps\footnote[1]{In all derivations the energy is assumed to be the last component of the four-momentum and the four-momentum to be a row vector.}:\vspace{-1em}
 
 \begin{enumerate}
 \item The $xy$-plane of the Lab system is rotated around the $z$-axis (given by the incoming electron direction) to make the $x$-axis lying in the electron scattering plane (see Fig.~\ref{fig:cr_sec_el_angles}). This rotation transforms the four-momentum as $P' = P \cdot R_1(\varphi_{e'})$, with 
@@ -273,11 +267,11 @@ R_{2}(\theta_{\gamma_{v}})=\begin{pmatrix}
 0 &0  & 0 &1 
 \end{pmatrix},
 \end{equation}
-where $\theta_{\gamma_v}$ is the polar angle of the virtual photon.\footnote[2]{Using embedded ROOT functions, both rotations can be coded using the unit vectors TVector3~$uz$~=~P4\_gamma.Vect().Unit() and 
+where $\theta_{\gamma_v}$ is the polar angle of the virtual photon\footnote[2]{Using embedded ROOT functions, both rotations can be coded using the unit vectors TVector3~$uz$~=~P4\_gamma.Vect().Unit() and 
  TVector3~$ux$~=~(P4\_EL.Vect().Cross(P4\_ELP.Vect())).Unit(), where P4\_gamma, P4\_EL, and P4\_ELP are the four-momenta of the virtual photon, initial and final electrons, respectively. 
  The axis vector $ux$ needs to be rotated according to $ux$.Rotate(3.*M\_PI/2,$uz$).
 Finally the rotation is defined as rot.SetZAxis($uz$,$ux$).Invert() and needs to be applied to the four-momentum (P4) of each particle:
- P4.Transform(rot).}
+ P4.Transform(rot).}.
 
 \item Finally, a boost into the CM frame of the {\em virtual photon -- initial proton} system is performed. It is given by the formula $P''' = P'' \cdot R_3(\beta)$, with 
 \begin{equation}
@@ -288,8 +282,8 @@ R_{3}(\beta) = \begin{pmatrix}
  0&  0& -\gamma \beta  & \gamma 
 \end{pmatrix}, \, \, \, \beta =\frac{|\overrightarrow{q}|}{E_{\gamma }+m_{proton}}=\frac{\sqrt{E^{2}_{\gamma }+Q^{2}}}{E_{\gamma }+m_{proton}}, \, \, \,\,  \gamma =\frac{1}{\sqrt{1-\beta ^{2}}},
 \end{equation}
-where $|\overrightarrow{q}|$ is the magnitude of the three-vector of the virtual photon and $\beta$ the magnitude and $z$-component of the three-vector $\overrightarrow{\beta}=(0,0,\beta)$.\footnote[3]{
-Note: if you use the ROOT function .Boost, you should change the sign of the $z$-component of $\beta$-vector as .Boost(0,0,-$\beta$).}
+where $|\overrightarrow{q}|$ is the magnitude of the three-vector of the virtual photon and $\beta$ the magnitude and $z$-component of the three-vector\footnote[3]{
+Note: if you use the ROOT function .Boost, you should change the sign of the $z$-component of $\beta$-vector as .Boost(0,0,-$\beta$).} $\overrightarrow{\beta}=(0,0,\beta)$.
 \end{enumerate}
 
 
@@ -428,12 +422,6 @@ All these files contain ``h10" ROOT ntuples. They were converted from HBOOK outp
 The scripts used for performing the Monte Carlo simulation, which incorporate the information on the simulation/reconstruction parameters used in this analysis, can be found here {\bf https://github.com/skorodumina/CLAS6\_sim\_rec\_sequence}.
 
 
-%came from the nt10maker (which is a part of CLAS software) and contain h10 ROOT ntples.
-
-%contain h10 ROOT ntples, which were made from hbook outputs of nt10maker (which is a part of CLAS software).
-
-%were produced as an output of nt10maker (which is a part of CLAS software) and contain h10 ROOT ntples.
-
 To speed up the analysis process, the specified above files are converted to reduced ``t21" ROOT ntuples, which contain only those variables that are used in the analysis (the conversion program is available at {\bf https://github.com/skorodumina/converter\_clas6.git}). After the conversion one is left with \vspace{-1em}
 
 \begin{itemize}
@@ -510,11 +498,6 @@ This Appendix contains the full set of single-differential cross sections measur
 
 Note that the invariant mass distributions are shown in the range from $M_{lower}$ to $M_{upper}$, both given by Eq.~\eqref{eq:inv_mass_boundary} with the latter calculated using the central value of the $W$ bin. One, therefore, should take into consideration that the cross section in invariant mass is equal to zero on both sides of the range. Also note that the invariant mass distributions contain one bin less than specified in Tab.~\ref{tab:summary_bins}, since the cross section in the last mass bins is not reported. This happens due to the special arrangement of mass bins used in the analysis, which forces the last bin to be situated out of the specified range (see Sect.~\ref{Sect:binning} for details).  
 
-% distribution boundaries determined using the central point of the $W$ bin
-
-%since the cross section in the last mass bins is not reported as this bin is located outside the 
-
-% due to the special arrangement of mass bins (see Sect.~\ref{}).because the cross section 
 
 It is also noteworthy that $\alpha$ angular distributions of the double-pion cross sections should be symmetrical with respect to $\alpha = 180^{\rm o}$, when integrated over $\varphi$. However, the experimentally measured $\alpha$ distributions acquire some asymmetry. To judge more quantitatively the asymmetry degree, the average asymmetry factor was estimated for each extracted $\alpha$ distribution as
 \begin{equation}

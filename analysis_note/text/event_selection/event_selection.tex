@@ -3,15 +3,12 @@
 
 
 This report presents the analysis of experimental data that were collected at JLab Hall B with the CLAS detector~\cite{Mecking:2003zu}. The measurements were part of the ``e1e" run period that lasted from November 2002 until January 2003 and included several parts with different beam energies (1 GeV and 2.039 GeV) and different target cell content (liquid hydrogen and liquid deuterium). The torus current was 2250~A and the mini torus current 5995~A. This particular analysis concentrates on the dataset obtained with the 2-cm-long liquid deuterium target and a 2.039 GeV polarized electron beam. The range of run numbers is 36516 - 36615. 
-% datasets with different configurations (hydrogen and deuterium targets as well as two different beam energies of 1 GeV and 2.039 GeV).
 
-%All data accumulated during the run
 All data collected with the CLAS detector is stored in a specific format, which is BOS format~\cite{BOS:bank,Stepanyan:1999}. The information on the detector response to particles passing through is recorded for each event and sorted into the set of BOS banks. The original BOS files store the data in terms of ``raw" signals (like TDC, ADC). These ``raw '' files are then ``cooked" with the reconstruction software (recsis), which converts the detector response to the variables that characterize the events directly, i.e. the particle momentum, the track coordinates, timing, etc. This information is also stored in BOS banks. However, since the cooking process introduces new variables, the structure of the ``cooked" BOS files is different from that for the ``raw" files. The ``cooked" data is stored in various formats including BOS files and ROOT ntuples. In this analysis the latter were used\footnote[1]{The location of the data files is provided in App.~\ref{app_code}. The link to the scripts, which were used in the simulation/reconstruction sequence for this analysis is also given there.}.
-%ROOT ntuples for the full target runs are stored in /mss/clas/e1e/production/pass1/h10/, while those for the empty target are in /mss/clas/e1e/production/pass1/h10\_emptarg\_d/.
+
 
 Events corresponding to the investigated reaction $ep(n) \rightarrow e'p'(n')\pi^{+}\pi^{-}$ are distinguished among all other registered events through the event selection procedure, described in detail in this Section.  The selected exclusive events,  however, represent only a part of the total number of events produced in the reaction, while the remainder were not registered due to (i) geometrical holes in the detector acceptance and (ii) less than 100\% efficiency of particle detection within the detector acceptance. Therefore, to extract the reaction cross section, the experimental event yield should be adjusted for the geometric and detection efficiency, thus accounting for the lost events.
 
-%\footnote[2]{More details on the efficiency evaluation can be found in Sect.~\ref{Sect:eff_eval}.}
 
 In order to determine the detector efficiency, a Monte Carlo simulation is typically performed. In this analysis, double-pion events are generated with TWOPEG-D, which is an event generator for the double-pion electroproduction off a moving proton~\cite{twopeg-d}. These events are hereinafter called ``generated" events. 
 
@@ -20,18 +17,9 @@ The generated events are passed through a standard multi-stage procedure of simu
 Although the GSIM package includes all the detector geometry and properties, it still does not properly reproduce the resolution of the drift chambers and the TOF system. So the GSIM Post Processor (GPP) is used to better match the resolution as well as to include the effects of less-than-perfect detector response (due to broken drift wires, problematic phototubes, etc.). The latter effects are unique for a particular run period, and therefore the information on the detector imperfections is usually provided along with the data files to be then used in the GPP. Meanwhile, the GPP parameters intended to adjust the resolution (DC and TOF smearing factors) are typically determined individually during a particular analysis as the resolution depends on kinematics and hence on experimental conditions. This analysis uses the same resolution related GPP parameters as those determined in the study~\cite{Fed_an_note:2017,Fed_paper_2018}, which reports the cross section measurements off the free proton performed under the same experimental conditions (as they were also a part of the ``e1e" run period). 
 
 
- %This analysis uses the GPP parameters that were determined for the study described in Refs.~\cite{Fed_an_note:2017,Fed_paper_2018}, which reports the cross section measurements off the free proton performed under the same experimental conditions (as they were also a part of the ``e1e" run period). 
-%As the resolution depends on kinematics and hence on experimental conditions, 
-
-%he resolution depends on kinematics and hence on experimental conditions, the GPP parameters intended to adjust the resolution (DC and TOF smearing factors) are typically determined individually during a particular analysis. This analysis uses the GPP parameters that were determined for the study described in Refs.~\cite{Fed_an_note:2017,Fed_paper_2018}, which reports the cross section measurements off the free proton performed under the same experimental conditions (as they were also a part of the ``e1e" run period). 
-%As the resolution depends on kinematics and hence on experimental conditions, the GPP parameters intended to adjust the resolution (DC and TOF smearing factors) are typically determined individually for a particular dataset.
-%, which are unique for a particular run period.
-%that, being also attributed to the``e1e" run period, were performed under the same experimental conditions.
 
 At the final stage the GPP output files are ``cooked" using the same reconstruction software that was used for the real data (recsis). Events that survive after the ``cooking" process are hereinafter called ``reconstructed" Monte Carlo events. They are analyzed in the same way as real experimental events. 
 
-
-%It includes several steps. Firstly, 
 
 
 \section{Particle identification}
@@ -39,7 +27,7 @@ At the final stage the GPP output files are ``cooked" using the same reconstruct
 The CLAS detector consists of six sectors that are operated as independent detectors~\cite{Mecking:2003zu}. Each sector includes four sub-detectors: Drift Chambers (DC), \v Cerenkov Counters (CC), Time-of-Flight System (TOF), and Electromagnetic Calorimeters (EC).
 
 
-In the initial analysis step, all collected events are subject to a standard event preselection\footnote[2]{In this analysis this preselection is performed when converting the ``h10" ROOT ntuples to the ``t21" ROOT ntuples. See more details in App.~\ref{app_code}}, which is performed using specific variables from the BOS banks~\cite{BOS:bank,Stepanyan:1999}. Firstly, to ensure that particles within an event were properly reconstructed, the number of geometrically reconstructed particles ($gpart$) is required to be greater than zero for each event. The $gpart$ variable is extracted from the variable $NPGP$ in the HEVT bank according to the following relation,
+In the initial analysis step, all collected events are subject to a standard event preselection\footnote[2]{In this analysis this preselection is performed when converting the ``h10" ROOT ntuples to the ``t21" ROOT ntuples. See more details in App.~\ref{app_code}.}, which is performed using specific variables from the BOS banks~\cite{BOS:bank,Stepanyan:1999}. Firstly, to ensure that particles within an event were properly reconstructed, the number of geometrically reconstructed particles ($gpart$) is required to be greater than zero for each event. The $gpart$ variable is extracted from the variable $NPGP$ in the HEVT bank according to the following relation,
 \begin{equation}
 NPGP=(\text{Number of final reconstructed particles})\times100 + gpart.
 %\label{eq:id_gpart}
@@ -52,22 +40,6 @@ For each event the electron candidate is defined as the first in time particle t
 
 Finally, all particle candidates should have an appropriate charge, i.e. the variable $Charge$ from the EVNT bank is required to be $\pm$1 depending on the candidate type.
 
-
-%All data accumulated during the run is stored in BOS~\cite{BOS:bank} files.
-
-%Events are selected for analysis under the following conditions:
-
-%\begin{itemize}
-%\item the number of geometrically reconstructed particles ($gpart$) is required to be greater than zero. The $gpart$ variable is extracted from the variable $NPGP$ in the HEVT bank according to the following relation,
-
-%\item the status word ($stat$) is greater than zero (variable $Status$ in the EVNT bank);
-
-%\item for electron candidates all variables $DCStat$, $CCStat$, $SCStat$, and $ECStat$ from the EVNT bank must be greater than zero, while for hadron candidates only the variables $DCStat$ and $SCStat$ from the EVNT bank are required to be greater than zero; 
-
-%\item the corresponding charge for all particle candidates (variable $Charge$ from the EVNT bank) is required to be plus or minus one depending on the particle candidate's type.
-
-
-%\end{itemize}
 
 The particle candidates that survive this event preselection are then subject to further detailed selection, which is described below.
 
@@ -116,8 +88,6 @@ Cuts on the minimal electron momentum and on sampling fraction are applied both 
 
 
 
-
-
 \subsubsection{CC cuts}
 \label{Sect:cc_cuts} 
 To improve the quality of the electron candidate selection and $\pi^{-}/e^{-}$ separation, a \v Cerenkov counter is used~\cite{Adams:2001kk}. As shown in~\cite{Osipenko:2004}, there is a contamination in the measured CC spectra that manifests itself as a so-called single-photoelectron peak, which is actually located at a few photoelectrons (see the distributions shown in black in Fig.~\ref{fig:nphe_all_seg}). The main source of this contamination are accidental coincidences of PMT noise signals with measured pion tracks~\cite{Osipenko:2004}. The goal of CC cuts is to separate the spectrum of good electron candidates (it corresponds to the main maximum of the photoelectron distribution) from the single-photoelectron peak, but at the same time to minimize the loss of good events. As seen in Fig.~\ref{fig:nphe_all_seg} (black curves), where photoelectron distributions are plotted, the single-photoelectron peak is rather pronounced and it significantly overlaps with the spectrum of good electron candidates. Thus the elimination of this contamination is not a straightforward task and a special procedure has been developed for this purpose. 
@@ -157,7 +127,7 @@ In Fig.~\ref{fig:cc_plane_def} the particle track in the DC is shown by the thin
 \end{figure}
 
 
-The $(\theta_{cc},\varphi_{cc})$ angles in the projective plane are determined by the vector $\overrightarrow{P}=\overrightarrow{P_{0}}+\overrightarrow{t}$, where $\overrightarrow{P_{0}}$ is a vector that goes from the vertex to the point of the track intersection with the SC. Its components are known from the DCPB bank $\overrightarrow{P_{0}} = (p_{x}^{0},p_{y}^{0},p_{z}^{0}) = ($x\_SC,~y\_SC,~z\_SC$)$\footnote[3]{In the DCPB bank both $\overrightarrow{n}$ and $\overrightarrow{P_{0}}$ are defined in the sector reference frame.}.
+The $(\theta_{cc},\varphi_{cc})$ angles in the projective plane are determined by the vector $\overrightarrow{P}=\overrightarrow{P_{0}}+\overrightarrow{t}$, where $\overrightarrow{P_{0}}$ is a vector that goes from the vertex to the point of the track intersection with the SC. Its components are known from the DCPB bank\footnote[3]{In the DCPB bank both $\overrightarrow{n}$ and $\overrightarrow{P_{0}}$ are defined in the sector reference frame.} $\overrightarrow{P_{0}} = (p_{x}^{0},p_{y}^{0},p_{z}^{0}) = ($x\_SC,~y\_SC,~z\_SC$)$.
 
 The vector $\overrightarrow{t}$ can be defined as
 \begin{equation}
@@ -258,10 +228,6 @@ The curved vertical stripe in sector five in Fig.~\ref{fig:ph_vs_th_cc} correspo
 \caption{\small Influence of different CC cuts on the distributions of the number of photoelectrons multiplied by ten for the six CLAS sectors. Black curve -- only fiducial cut in the CC plane is applied, red curve -- the $\varphi_{cc}$ matching cut is added, blue curve -- the $\theta_{cc}$ matching cut is added, and green curve -- the geometrical cut in the CC plane that removes inefficient zones is finally added.} \label{fig:nphe_all_seg}
 \end{center}
 \end{figure}
-%\vspace{-1em}
-%The value of five photoelectrons was chosen as a criterion to ensure that the single-photoelectron peak itself as well as the region, where it overlaps with the main spectrum, is located below this value for most of the PMTs. This will lead to the better separation between the single-photoelectron peak and the main spectrum after the geometrical cut is applied.
-
-%It turned out that the major part of the contamination from the single-photoelectron peak corresponds to some specific geometrical zones, which are distributed inhomogeneously in the CC plane. For the purpose of removal of these zones from the further analysis a special geometrical cut is established. 
 
 
 For further analysis only fiducial areas with a ratio~\eqref{eq:cc_ratio} greater than the certain threshold value are selected. This threshold value was chosen to be 0.7, 0.65, 0.7, 0.65, 0.8, and 0.8 for sectors 1, 2, 3, 4, 5, and 6, respectively. Since inefficient zones are not identical for various CLAS sectors (see Fig.~\ref{fig:ph_vs_th_cc}), different threshold values are needed for them. Geometrical zones, which are selected for further analysis, are shown in black in the lower plots of Fig.~\ref{fig:ph_vs_th_cc}. All zones shown in white are treated as inefficient and are removed from the analysis. As seen in Fig.~\ref{fig:ph_vs_th_cc}, there is an inefficient zone in the middle of each sector. This is expected since two CC mirrors are joined here. 
@@ -276,8 +242,6 @@ For further analysis only fiducial areas with a ratio~\eqref{eq:cc_ratio} greate
 
 The threshold values for the ratio~\eqref{eq:cc_ratio} were chosen in order to keep the balance between the intention to reduce the amount of low efficient zones as much as possible and the desire to preserve most of the statistics. The influence of this geometrical cut on the photoelectron distributions in different sectors is demonstrated in Fig.~\ref{fig:nphe_all_seg}, where the distributions after the cut are plotted in green. As was expected, this cut leads to some reduction in the low lying part of the photoelectron spectrum, including the region of the single-photoelectron peak, and leaves the high lying part of the spectrum unchanged.
 
-
-%This cut leads to a significant decrease of the contamination from the single-photoelectron peak and better separation between this peak and main photoelectron distribution (that is especially essential for forward segments). 
 
 This geometrical cut is fully based on the experimental data. It acts as a fiducial cut, because it simply removes certain geometrical regions in the CC plane. This means that it can be safely applied to the Monte Carlo simulation, too. Thus, the same geometrical regions (shown in white in the lower plots in Fig.~\ref{fig:ph_vs_th_cc}) are removed both for the experimental and reconstructed Monte Carlo events.
 
@@ -301,8 +265,6 @@ where $P_{1}$, $P_{2}$, and $P_{3}$ are free fit parameters.
 
 
 
-
-
 The fitting function is then continued into the region on the left side of the red line. In this way the two regions, shown in blue and green in Fig.~\ref{fig:nphe_cut}, are determined. Finally the correction factors are defined by~\eqref{eq:cc_corr_fact} and applied as a weight for each event, which goes to the particular PMT. These correction factors depend on the PMT number and are typically on a level of a few percent.
 \begin{equation}
 F_{ph.\,\, el.} = \frac{\textrm{\color{green}{green\,\,  area} \color{black}{\,\,+\,\,} \color{blue}{blue\,\,  area}}}{\textrm{\color{green}{green\,\,  area}}}
@@ -320,7 +282,7 @@ F_{ph.\,\, el.} = \frac{\textrm{\color{green}{green\,\,  area} \color{black}{\,\
 Note that segments \#1 and \#18 are removed from the analysis completely (both in data and Monte Carlo), since they are dominated by events from the single-photoelectron peak. 
 
 
--------------------------------------------
+%-------------------------------------------
 
 
 \subsection{Hadron identification}
@@ -371,7 +333,6 @@ To cure the latter two types of problems, a so-called timing correction is devel
 \label{eq:delta_t}
 \end{equation}
 
-%The quantity $\Delta T$ corresponds to the time difference between the real TOF signal and the expected one.
 
 Figure~\ref{fig:shifted_paddles} illustrates the timing correction for type B problematic paddles \#27 in sector 2 (left side) and \#31 in sector 6 (right side) for $\pi^+$ candidates. The plots in the first row correspond to the $\beta_{h}$ versus momentum and $\Delta T$ versus momentum distributions before the correction. It is seen that $\beta_{h}$ versus momentum bands are shifted from their expected position shown by the black curve, which corresponds to the nominal $\beta_{n}$ defined by Eq.~\eqref{eq:hadron_hadronmass}. These shifts of $\beta_{h}$ versus momentum bands are caused by the corresponding shifts of the $\Delta T$ versus momentum bands from zero position shown by the black horizontal lines. The idea of the timing correction is to move $\Delta T$ bands back to the position around zero, as shown in the corrected $\Delta T$ versus momentum plots in the second row. The corrected value of $\beta$ is then calculated as
 \begin{equation}
@@ -461,8 +422,6 @@ The significance of this effect depends on the beam energy. In the analysis~\cit
 Since this analysis suffers from additional complications as binding and motion of the target proton inside the deuteron, it was considered sensible to use the electron momentum corrections that have previously been developed and tested in the analysis of the free proton part of ``e1e" dataset at the same beam energy~\cite{Fed_an_note:2017}. To establish them, the approach~\cite{KPark:momcorr}, which is based on elastic kinematics, was used. These corrections include electron momentum magnitude correction as well as electron polar angle correction, which were developed for each CLAS sector individually.  
 
 
-%For this data analysis momentum corrections developed in the analysis of the proton part of ``e1e" dataset with the same beam energy were used~\cite{Fed_an_note:2017}. To establish them the approach~\cite{KPark:momcorr}, which is based on elastic kinematic, was chosen. These corrections include electron momentum magnitude correction as well as electron polar angle correction, which were developed for each CLAS sector individually. 
-
 Figure~\ref{fig:el_mom_corr_peak_position}, which was taken from the analysis~\cite{Fed_an_note:2017}, demonstrates that after the electron momentum corrections the elastic peak position for all CLAS sectors gets closer to the proton mass, shown by the red horizontal line.
 
 \begin{figure}[htp]
@@ -473,7 +432,4 @@ Figure~\ref{fig:el_mom_corr_peak_position}, which was taken from the analysis~\c
 \end{figure}
 
 The correction discussed above is applied only for experimental data. As for the Monte Carlo simulation, it turns out that due to unknown reasons (most likely because electrons lose some energy when they travel through the detector and target media) the reconstructed electron momentum appears to be slightly lower than the generated one. This effect is demonstrated in the left plot of Fig.~\ref{fig:el_mom_corr_sim}, where the event distribution of the quantity $\Delta P$ (which is the difference between generated and reconstructed electron momenta) is presented. Therefore, an adapted procedure of correcting the electron momentum magnitude is also applied to the reconstructed Monte Carlo events. This procedure is similar to that used for the proton energy loss (see Sect.~\ref{Sect:pr_en_loss}). The correction depends only on the scattered electron momentum and polar angle, but not on the CLAS sector. The typical value of this correction is 0.2\%. The right plot in Fig.~\ref{fig:el_mom_corr_sim} shows the result of the correction. As seen in this plot, the mean value of the quantity $\Delta P$ demonstrates no shift from zero when the momentum magnitude for reconstructed electron is corrected. 
-%Figure~\ref{fig:el_mom_corr_sim} shows the event distributions of the quantity $\Delta P$ (that is the difference between thrown and reconstructed electron momenta) before and after the correction procedure. As seen in Fig.~\ref{fig:el_mom_corr_sim}, these differences become negligible after momentum corrections have been applied.
-
-
 

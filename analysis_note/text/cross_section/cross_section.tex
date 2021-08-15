@@ -3,7 +3,6 @@
 \label{Sect:cr_sect}
 
 
-
 \section{$W$-smearing and boundary blurring of the $Q^{2}$ versus $W$ distribution}
 \label{Sect:smearing_blurring}
 
@@ -29,13 +28,8 @@ In experiments off protons at rest $W_{f}$ and $W_{i}$ may differ due to the det
 If a smeared value $W_{sm}$ is used to describe the reaction, the extracted cross sections turned out to be convoluted with a function that is determined by the Fermi motion of the initial proton~\cite{Skorodumina:2015rea,twopeg-d}. To retrieve the non-smeared observable, a correction that unfolds this effect should be applied to the cross sections.
 
 
-Beside the $W$-smearing, the Fermi motion of the target proton is also responsible for the boundary blurring of the $Q^{2}$ versus $W$ distribution\footnote[3]{This issue is addressed in more details in Ref.~\cite{twopeg-d}}. This happens because the experiment off the moving proton with fixed laboratory beam energy is equivalent to that off the proton at rest performed with altered effective beam energy~\cite{twopeg-d}. The boundaries of the $Q^{2}$ versus $W$ distribution, however, are beam energy dependent. Therefore, the distribution edges, being sharp and distinct in the proton at rest experiment, become blurred in the experiment off a moving proton.
+Beside the $W$-smearing, the Fermi motion of the target proton is also responsible for the boundary blurring of the $Q^{2}$ versus $W$ distribution\footnote[3]{This issue is addressed in more details in Ref.~\cite{twopeg-d}.}. This happens because the experiment off the moving proton with fixed laboratory beam energy is equivalent to that off the proton at rest performed with altered effective beam energy~\cite{twopeg-d}. The boundaries of the $Q^{2}$ versus $W$ distribution, however, are beam energy dependent. Therefore, the distribution edges, being sharp and distinct in the proton at rest experiment, become blurred in the experiment off a moving proton.
 
-
-%The issue of $W$-smearing is closely related to a problem of blurring of the $Q^{2}$ versus $W$ distribution boundaries in reactions off moving protons\footnote[3]{This issue is addressed in more details in Ref.~\cite{twopeg-d}}. 
-%In electron scattering experiments the fixed beam energy imposes kinematic limits on the maximal achievable values of $W$ and $Q^2$.  The kinematic limitations are usually more strongly restricted by the experimental conditions, i.e. by the limitations on the polar angle and minimal detectable energy of the scattered electron. The formulae that give the shapes of $Q^{2}$ versus $W$ distribution edges for various restriction types are given in Ref.~\cite{twopeg-d}.
-
-%The edges of the $Q^2$ versus $W$ distribution are beam energy dependent. As demonstrated in Ref.~\cite{twopeg-d}, the experiment off the moving proton with fixed laboratory beam energy is equivalent to that off the proton at rest performed with altered effective beam energy. Therefore, the distribution edges, being sharp and distinct in the proton at rest experiment, become blurred in the experiment off the moving proton.
 
 The blurring, however, affects only the edges of $Q^{2}$ versus $W_{true}$ distribution, where $W_{true}$ is the true reaction invariant mass given by Eq.~\eqref{W_fin_2}, since $W_{true}$ accounts for the target motion and, therefore, for the alteration of the effective beam energy. If the smeared value $W_{sm}$, calculated by Eq.~\eqref{W_fin_1} under the target-at-rest-assumption, is used instead, the distribution edges are not subject to the blurring because the fixed value of the laboratory beam energy is used in calculations.
 
@@ -52,11 +46,9 @@ This situation is illustrated in Fig.~\ref{fig:blurring}, where the $Q^2$ versus
 The event yield in the blurred region suffers from depletion of events (compared to that for the case of fixed beam energy and sharp distribution edges). To estimate this effect, one should know the function that describes the alteration of the effective beam energy. This function is in turn determined by the target proton momentum distribution. The cross sections extracted in the blurred region need a special correction, otherwise they will suffer from the underestimation.
 
 
-
 The situation described above offers two options, i.e. to use either $W_{sm}$ or $W_{true}$ to describe the reaction. The former opportunity leads to the need to apply a correction that unfolds the cross section smearing, while the latter requires the correction due to the blurring effect. The first option was chosen in this analysis because it has the advantage of using the $\pi^{-}$ missing topology that accumulates the majority of the experimentally available statistics. 
 
 Thus, to calculate the cross section in this analysis, events are binned in $W_{sm}$. Note, however, that the corresponding $W$ points on the chosen $W_{sm}$ grid (see Sect.~\ref{Sect:binning}) are then treated as actual $W$-values where the cross section is eventually reported. However, the cross section values assigned to these $W$ points is treated as distorted. The necessary correction to the cross section is based on the TWOPEG-D event generator~\cite{twopeg-d}, which offers a proper Monte Carlo simulation of the double-pion electroproduction off moving protons. This correction is described in Sect.~\ref{Sect:fermi_corr}.
-
 
 
 
@@ -67,7 +59,7 @@ Thus, to calculate the cross section in this analysis, events are binned in $W_{
 
 Once the quasi-free double-pion events are selected as described in Chapter~\ref{Sect:select}, the laboratory four-momenta of all final particles are known: they are either registered or calculated as missing. These four-momenta are then used for the calculation of the kinematic variables, which are introduced in Sect.~\ref{Sect:kin_var}. The cross sections meanwhile are extracted in the center-of-mass frame of the {\em virtual photon -- initial proton} system (CMS). Therefore, to calculate the kinematic variables, the four-momenta of all particles need to be transformed from the laboratory system (Lab) to the CMS.
 
-The CMS is uniquely defined as the system, where the initial proton and the photon move towards each other with the $z_{CMS}$-axis along the photon and the net momentum equal to zero. However, the procedure of the Lab to CMS transformation differs depending on the specificity of the reaction initial state (real or virtual photons, at rest or moving target). Figure~\ref{fig:lab_to_CMS} illustrates three options\footnote[4]{The fourth option of the reaction off the moving proton induced by the real photons is not shown.} for the experimental specification of the reaction initial state.%Therefore, the electroproduction experiment conducted on the moving in deuterium proton requires different procedure of Lab-to-CMS transformation than that performed on the proton at rest. 
+The CMS is uniquely defined as the system, where the initial proton and the photon move towards each other with the $z_{CMS}$-axis along the photon and the net momentum equal to zero. However, the procedure of the Lab to CMS transformation differs depending on the specificity of the reaction initial state (real or virtual photons, at rest or moving target). Figure~\ref{fig:lab_to_CMS} illustrates three options\footnote[4]{The fourth option of the reaction off the moving proton induced by the real photons is not shown.} for the experimental specification of the reaction initial state.%
 
  
 \begin{figure}[!ht]
@@ -95,8 +87,6 @@ This approximation in the Lab to CMS transformation introduces a systematic inac
 
 
 
-
-
 \clearpage
 
 
@@ -110,8 +100,6 @@ Q^{2}= & -(P_{\gamma_{v}}^{\mu})^{2} = -(P_{e}^{\mu}-P_{e'}^{\mu})^{2}, \label{e
 \end{eqnarray}
 where $P_{\gamma_{v}}^{\mu}$ is the four-momentum of the virtual photon, while $P_{e}^{\mu}$ and $P_{e'}^{\mu}$ the four-momenta of the incoming and scattered electrons, respectively. 
 
-
-%In the electron scattering process the variables $W$ and $Q^{2}$ are also present besides the hadronic variables. Thus the electron scattering cross section for double-pion electroproduction should be seven-fold differential and may be written as $\frac{d^{7}\sigma}{dWdQ^{2}d^{5}\tau}$, where $d^{5}\tau$ is five-dimensional phase-space differential.
 
 The three-body final hadron state is unambiguously determined by five kinematic variables~\cite{Fed_an_note:2017}, and there are several options for their choice. The following generalized set of variables is used in this analysis\footnote[5]{More details on the organization of the reaction phase-space can be found in App.~\ref{app_ph_space}.}:\vspace{-0.5em}
 
@@ -129,8 +117,7 @@ $M_{p'\pi^{+}}$, $M_{\pi^{+}\pi^{-}}$, $\theta_{p'}$~,~$\varphi_{p'}$~,~$\alpha_
 
 \item[2.] [$\pi^{-}$, $\pi^{+}$, $p'$]
 $M_{\pi^{-}\pi^{+}}$, $M_{\pi^{+}p'}$, $\theta_{\pi^{-}}$, $\varphi_{\pi^{-}}$, $\alpha_{\pi^{-}}$ (or $\alpha_{[p\pi^{-}][p'\pi^{+}]}$),\vspace{-0.25em}
-%of the $p\pi^{+}$ pair with respect to the plane composed by
-%initial proton and $\pi^{-}$;
+
 
 \item[3.]  [$\pi^{+}$, $\pi^{-}$, $p'$]
 $M_{\pi^{+}\pi^{-}}$, $M_{\pi^{-}p'}$, $\theta_{\pi^{+}}$, $\varphi_{\pi^{+}}$, $\alpha_{\pi^{+}}$ (or $\alpha_{[p\pi^{+}][p'\pi^{-}]}$).\vspace{-0.5em}
@@ -251,7 +238,7 @@ The available kinematic coverage in the initial state variables is shown by the 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.95\textwidth]{pictures/cross_section/q2vsw_new.pdf}
-\caption{\small $Q^2$ versus $W$ distribution$^{7}$ populated with the selected double-pion events. The cross section is calculated in 2D cells within the blue boundaries.} \label{fig:q2_vs_w}
+\caption{\small $Q^2$ versus $W$ distribution populated with the selected double-pion events. The cross section is calculated in 2D cells within the blue boundaries.} \label{fig:q2_vs_w}
 \end{center}
 \end{figure}
 
@@ -259,30 +246,12 @@ The kinematic coverage in the final state variables has the following reaction r
 
 The binning in the final hadron variables used in this study is listed in Tab.~\ref{tab:summary_bins}. In each $W$ and $Q^{2}$ bin the range of each final hadron variable is divided into bins of equal size. However, the number of bins differs in various $W$ subranges, in order to take into account (i) the statistics drop near the reaction threshold, which is at $\approx$~1.22~GeV and (ii) the aforementioned broadening of the reaction phase-space with increasing $W$. The chosen amount of bins in each considered $W$ subrange reflects the intention to maintain reasonable statistical uncertainties of the single-differential cross sections for all $W$ and $Q^2$ bins. 
 
-% The binning choice also takes into account the cross section drop near the double-pion production threshold at $\approx$ 1.22 GeV as well as the broadening of the reaction phase-space with increasing $W$ (see more details in App.~\ref{app_ph_space}).
-%\footnote[8]{See more details on the shape of the reaction phase-space in invariant masses in App.~\ref{app_ph_space}.}.
 
-%\begin{table}[htp]
-%\centering 
-%\caption{\small Number of bins for the given final hadron variables. \label{tab:summary_bins}}
-%\begin{tabular}{|c|C{0.13\textwidth}|C{0.13\textwidth}|C{0.15\textwidth}|C{0.18\textwidth}|}
-%\hline \multirow{2}{*}{\diagbox[width=3cm, height=2.3cm]{\raisebox{7pt}{$W$ range}}{\raisebox{-10pt}{Variable}}} &Number of bins in invariant mass $M$ &Number of  bins in polar angle $\theta$ &Number of bins in  azimuthal angle $\varphi$ &Number of bins in angle between two planes $\alpha$ \\
-%\hline
-% 1.3 - 1.35 GeV & 8 & 6 & 5 & 5\\
-%\hline
-%1.35 - 1.4 GeV & 10 & 8 & 5 & 6\\
-%\hline 
-% 1.4 - 1.45 GeV & 12 & 10 & 5 & 8\\
-%\hline 
-% $ > 1.45$ GeV & 12 & 10 & 8 & 8\\
-%\hline 
-%\end{tabular}
-%\end{table}
 
 For the binning in the polar angle note the following. The cross section, although being differential in $[-\cos\theta]$, is binned in $\theta$. These $\Delta \theta$ bins are of equal size in the corresponding $W$ subrange. See also Sect.~\ref{Sect:cr_sect_formula} on this matter.
 
 
-%. This increases the number of bins filled with event, which and hence from 80\% to 100\% (as $W$ decreases) of bins turn out to be filled with events and involved in the cross section calculation.   
+
 \vspace{0.5em}
 \begin{table}[htb]
 \centering 
@@ -307,9 +276,6 @@ For the binning in the polar angle note the following. The cross section, althou
 The total numbers of multi-dimensional bins for the corresponding $W$ ranges are listed in the last row of Tab.~\ref{tab:summary_bins} and require some clarification. In fact the invariant masses border of the double-pion production phase-space is $W$-dependent and determined by the Byckling function (see App.~\ref{app_ph_space}). Therefore, the bins located outside this border contain no double-pion events and hence do not contribute to the cross section. For a given $W$ value, the border is distinct, however for a $W$ bin, which corresponds to a range of $W$ values, it is somewhat diffused. If events are binned in $W_{true}$ (like in a free proton experiment) and the bin is small, e.g. 25 MeV, this diffusion is marginal. Then the quantity of bins involved in the cross section calculation (including both non-empty and empty cells) varies from 90\% to 70\% of the total numbers given in the last row of Tab.~\ref{tab:summary_bins} as $W$ increases from the threshold. However, if events are binned in $W_{sm}$ (like in this analysis), each $W_{sm}$ value in a bin corresponds to a sequence of $W_{true}$ spread over 50-100 MeV. In this case a very pronounced boundary diffusion takes place, increasing the quantity of bins filled with events, i.e. the fraction of bins involved in the cross section calculation turn out to vary from 100\% to 80\% as $W$ increases\footnote[8]{This estimation is based on the Monte Carlo simulation performed with TWOPEG~\cite{twopeg} and TWOPEG-D~\cite{twopeg-d} for the reactions off the proton at rest and off the moving proton, respectively.}.
 
 
-%\footnote[7]{Note that the actual number of bins involved in the cross section calculation is slightly less (by $<$1\%) due to the restrictions imposed by the Byckling function on the double-pion production phase-space.}
-
-%Since the border of the double-pion production phase in invariant masses is determined by the Byckling function, the actual number of bins filled with the double-pion events is less than the number listed in the table. If events are binned in $W_{true}$ (like in the free proton experiment) the number of filled bins is 80\%-90\% of the listed in the table. However, the necessity to bin events in $W_{sm}$ (like in this analysis) leads to the fact that each $W$ bin contain the mixture of events with different $W_{true}$ and as a result -- with different size of the phase-space in invariant masses. The overlap of different 
 
 The specific organization of the double-pion production phase-space in the invariant masses $(M_{h_{1}h_{2}}, M_{h_{2}h_{3}})$ causes the need to pay special attention to the binning in these variables. Equation~\eqref{eq:inv_mass_boundary} gives the expressions for the lower and upper boundaries of the $M_{h_{1}h_{2}}$ distribution and demonstrates that the upper boundary depends on the value of $W$, while the lower does not (see also App.~\ref{app_ph_space} on this matter).
 \begin{equation}
@@ -330,9 +296,8 @@ Since the cross section is calculated in a bin $W_{left} < W < W_{right}$, the b
 \end{equation} 
 where $N_{bins}$ is the number of bins specified in the first row of Tab.~\ref{tab:summary_bins}. The left boundary of the first bin is set to $M_{lower}$.
 
-The chosen arrangement of bins forces the last bin to be situated completely out of the boundaries given by Eq.~\eqref{eq:inv_mass_boundary} using $W_{center}$\footnote[9]{Note that for each $W$ bin and for each invariant mass, $\Delta M$ given by Eq.~\eqref{eq:bin_width} is greater than 12.5~MeV, which is the half of the $W$ bin width.}. Therefore, the cross section in this extra bin finally is not reported. However, this bin is kept in the analysis since its content (though being very small) contributes to all cross sections that are obtained by integrating over the corresponding invariant mass distribution. 
+The chosen arrangement of bins forces the last bin to be situated completely out of the boundaries\footnote[9]{Note that for each $W$ bin and for each invariant mass, $\Delta M$ given by Eq.~\eqref{eq:bin_width} is greater than 12.5~MeV, which is the half of the $W$ bin width.} given by Eq.~\eqref{eq:inv_mass_boundary} using $W_{center}$. Therefore, the cross section in this extra bin finally is not reported. However, this bin is kept in the analysis since its content (though being very small) contributes to all cross sections that are obtained by integrating over the corresponding invariant mass distribution. 
 
-% Although the cross section obtained in this extra bin is very small, it is kept in the analysis since its content contributes to all cross sections that are obtained by integrating over the corresponding invariant mass distribution. Other than that, however, the cross section in this extra bin is not considered and finally not reported.
 
 Note that the cross section in the next to last bin in invariant mass needs a special correction. This correction is described in Sect.~\ref{Sect:bin_cor}.
 
@@ -356,7 +321,7 @@ The experimental electron scattering cross section $\sigma_{e}$ for the reaction
 %\vspace{-2.4em}
 \begin{itemize}
 \item $\textrm{d}^{5}\tau = \textrm{d}M_{h_{1}h_{2}} \textrm{d}M_{h_{2}h_{3}} \textrm{d}\Omega_{h_1} \textrm{d}\alpha_{h_1}$ is the differential of the five independent variables of the $\pi^{+}\pi^{-}p$ final state, which are described in Sect.~\ref{Sect:kin_var};\vspace{-0.25em}
-\item $N_{full}$ and $N_{empty}$ are the numbers of selected double-pion events inside the seven-dimensional bin for runs with deuterium and empty target, respectively;\vspace{-0.25em} %Each event was weighted with the corresponding photoelectron correction factor given by Eq.~\eqref{eq:cc_corr_fact}.\vspace{-0.25em}
+\item $N_{full}$ and $N_{empty}$ are the numbers of selected double-pion events inside the seven-dimensional bin for runs with deuterium and empty target, respectively;\vspace{-0.25em} 
 \item the quantity in the square brackets in the denominator corresponds to the luminosity of the experiment $\mathcal{L}$ in the units cm$^{-2}\cdot$C$^{-1}$ and its components are\vspace{-0.25em}
 \begin{itemize}
 \item [ ]  $l$ = 2 cm the length of the target,\vspace{-0.4em}
@@ -379,8 +344,6 @@ which results in the luminosity value of $\mathcal{L}$ = 0.63$\cdot$10$^{42}$ cm
 \end{itemize}
 
 The electron scattering cross section $\sigma_{e}$ in the left hand side of Eq.~\eqref{expcrossect} is assumed to be obtained in the center of the finite seven-dimensional kinematic bin $\Delta W \Delta Q^{2} \Delta^{5} \tau$. 
-
-
 
 
 
@@ -452,13 +415,12 @@ Regarding the middle row in \eqref{eq:reported_sec} note the following. Although
 For the Monte Carlo simulation the TWOPEG-D event generator was used~\cite{twopeg-d}. This is the version of TWOPEG (an event generator for double-pion electroproduction off the free proton~\cite{twopeg}), which is able to simulate the effects of the initial proton motion. In this version of the event generator the Fermi motion of the initial proton is generated according to the Bonn potential~\cite{Machleidt:1987hj} and then naturally merged into the specific kinematics of double-pion electroproduction. TWOPEG-D accounts for radiative effects according to the approach described in Refs.~\cite{Mo:1968cg,twopeg}.
 
 The generated events are passed through the standard detector simulation (GSIM, GPP) and reconstruction procedures (recsis) with the majority of parameters kept the same as in the studies~\cite{Fed_an_note:2017,Markov:2014}, which were also devoted to the ``e1e" run period\footnote[13]{See the beginning of Sect.~\ref{Sect:select} and also App.~\ref{app_code} for more details on the simulation/reconstruction procedure and for the information on the corresponding parameters used in this analysis.}.
-%The sequence of the Monte Carlo event reconstruction is given in more detail in the beginning of Sect.~\ref{Sect:select}. The information on the scripts used in this analysis is given in App.~\cite{app_code}.
-%More details the procedure are given in the beginning of Sect.~\ref{Sect:select}.   and the parameters used in this analysis is given 
+
 
 
 
 In the studies of double-pion production cross section it is especially important to generate enough Monte Carlo statistics in order to saturate each multi-dimensional bin of the reaction phase-space with events (see Tab.~\ref{tab:summary_bins}). Insufficient Monte Carlo statistics leads to an improper efficiency evaluation and an unnecessary rise in the empty cells contribution (see Sect.~\ref{Sect:empt_cells}), thus systematically affecting the accuracy of the extracted cross sections. For this study the total of about 4$\cdot$10$^{10}$ double-pion events were generated in the investigated kinematic region, which is considered adequate.
-%Otherwise, the efficiency cannot be determined properly and the extracted cross section will lack accuracy.
+
 
 The TWOPEG-D event generator performs a weighted event generation~\cite{twopeg}, i.e. all kinematic variables are generated randomly according to the double-pion production phase-space, while each event generated at a particular kinematic point acquires an individual weight, which corresponds to the cross section at this point.  Therefore, the efficiency factor $\mathcal{E}$ from Eq.~\eqref{expcrossect} is calculated in each $\Delta W\Delta Q^2\Delta^{5}\tau$ bin as\vspace{-0.5em}
 \begin{equation}
@@ -470,8 +432,6 @@ The TWOPEG-D event generator performs a weighted event generation~\cite{twopeg},
 where $N_{gen}$ is the number of generated double-pion events (without any cuts) inside the multi-dimensional bin, $N_{rec}$ is the number of reconstructed double-pion events that survived in the bin after the event selection, while $\mathbb{N}_{gen}$ and  $\mathbb{N}_{rec}$ are the weighted numbers of the corresponding events and $w$ is a weight of an individual event.
 
 The efficiency in some kinematic bins could not be reliably determined due to boundary effects, bin to bin event migration, and limited Monte Carlo statistics. Such cells were excluded from consideration. They can be differentiated from the cells with reliable efficiency by a larger relative efficiency uncertainty $\delta \mathcal{E}/\mathcal{E}$.
-
-% Due to the fact that $N_{gen}$ and $N_{rec}$ in Eq.~\eqref{eq:eff} are not independent, the usual method of partial derivatives is not applicable in order to calculate $\delta \mathcal{E}$.
 
 
 Meanwhile, the calculation of the efficiency uncertainty $\delta \mathcal{E}$ is not straightforward and needs special attention, since (i) $N_{gen}$ and $N_{rec}$ in Eq.~\eqref{eq:eff} are not independent and (ii) Monte Carlo events in this equation are subject to weighting. Therefore, the special approach described in Ref.~\cite{Laforge:1996ts} was used to calculate $\delta \mathcal{E}$. Neglecting the event migration between the bins, this approach gives the following expression for the absolute statistical uncertainty of the efficiency in a bin for the case of weighted Monte Carlo simulation,
@@ -512,8 +472,6 @@ The idea of this cut is taken from the study~\cite{Fed_an_note:2017,Fed_paper_20
 
 
 Note that in this particular analysis the formula~\eqref{eq:eff_err_unweighted} for the unweighted Monte Carlo is used only for selecting the bins with reliable efficiency, since it allows the pure statistical behavior of the efficiency uncertainty to be determined. For the estimation of the cross section's statistical uncertainty the weights are taken into account and the formula~\eqref{eq:eff_err_weighted} is applied (see Sect.~\ref{Sect:stat_uncert}).
-
-
 
 
  
